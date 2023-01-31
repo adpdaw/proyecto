@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/faviconLogo.png"/>
+    <link rel="shortcut icon" type="image/x-icon" href="/img/faviconLogo.png"/>
     <title>Sign Up</title>
     <!-- <link href="https://cdn.tailwindcss.com" rel="stylesheet" /> -->
     <link rel="stylesheet" href="/css/tailwindcss.css"/>
