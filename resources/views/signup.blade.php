@@ -122,9 +122,9 @@
                     </div>
 
                     <div class="flex items-center">
-                        <input type="checkbox" name="remember_me" id="remember_me"
+                        <input type="checkbox" name="termsAcceptation" id="termsAcceptation"
                                class="mr-2 focus:ring-0 rounded" />
-                        <label for="remember_me" class="text-gray-700">I accept the
+                        <label for="termsAcceptation" class="text-gray-700">I accept the
                             <a href="#" class="text-blue-600 hover:text-blue-700 hover:underline">terms</a>
                             and
                             <a href="#" class="text-blue-600 hover:text-blue-700 hover:underline">privacy
