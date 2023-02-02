@@ -17,5 +17,18 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+/*
+Route::get('/login',"App\Http\Controllers\RegisterController@createLogin");
+Route::post('/login',"App\Http\Controllers\RegisterController@storeLogin");
+
+
+Route::get('/signup',"App\Http\Controllers\RegisterController@create");
+Route::post('/signup',"App\Http\Controllers\RegisterController@store");
+
+Route::get('/user/{user}',"App\Http\Controllers\UserController@show");
+Route::put('/user/{user}', "App\Http\Controllers\UserController@update");
+*/
+Route::get('/signup',"App\Http\Controllers\RegisterController@create");
+
 
 Route::put('/fichero/{fichero}',[\App\Http\Controllers\FicheroController::class,'update']);

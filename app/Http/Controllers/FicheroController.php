@@ -50,9 +50,8 @@ class FicheroController extends Controller
     {
         /*
          * $fichero->contenido = $request['contenido'];
-         *
-         *
-         *
+         *$fichero->save();
+         * return response($request);
          * */
     }
 

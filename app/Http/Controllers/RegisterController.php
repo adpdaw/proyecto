@@ -7,13 +7,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
-class UserController extends Controller
+
+class RegisterController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(){
+        $this->middleware('guest')->except('destroyLogin');
+        $this->middleware('auth')->only('destroyLogin');
+    }
     public function index()
     {
         //
@@ -26,7 +31,8 @@ class UserController extends Controller
      */
     public function create()
     {
-       return view("signup");
+       //return view("signup");
+        echo "hi i am here";
     }
 
     public function createLogin(){
@@ -60,13 +66,13 @@ class UserController extends Controller
             'name'=>'required',
             'email'=>'required|email|unique:users',
             'password'=>'required|min:8|confirmed',
-            'remember_me'=>'required'
+            'termsAcceptation'=>'required'
         ]);
 
         $user= new User();
         $user->name=$request['name'];
         $user->email=$request['email'];
-        $user->remember_me = $request['remember_me'];
+        $user->remember_me = $request['termsAcceptation'];
         $user->password=Hash::make($request['password']);
 
         $user->save();
@@ -117,15 +123,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        $respuesta =[
-            "mensaje"=>"Usuario $user->id borrado correctamente",
-            "usuario"=>$user
-        ];
-        $user->delete();
-        return response($respuesta);
-    }
+
     public function destroyLogin(){
         Auth::logout();
         return redirect('/');

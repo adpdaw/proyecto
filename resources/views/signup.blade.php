@@ -31,7 +31,9 @@
                         in here</a>
                 </p>
 
-                <form class="my-8 text-sm">
+                <form class="my-8 text-sm" action="/signup" method="post">
+                    @csrf
+
                     <div class="flex flex-col my-4">
                         <label for="name" class="text-gray-700">Name</label>
                         <input type="text" name="name" id="name"

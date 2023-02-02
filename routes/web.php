@@ -17,11 +17,15 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/api/login',"App\Http\Controllers\RegisterController@createLogin");
-Route::post('/api/login',"App\Http\Controllers\RegisterController@storeLogin");
+
+Route::get('/login',[\App\Http\Controllers\RegisterController::class,'createLogin']);
+Route::post('/login',"App\Http\Controllers\RegisterController@storeLogin");
 
 
-Route::get('/api/signup',"App\Http\Controllers\RegisterController@create");
-Route::post('/api/signup',"App\Http\Controllers\RegisterController@store");
+//Route::get('/create',"App\Http\Controllers\RegisterController@create");
+Route::get('/signup',[\App\Http\Controllers\RegisterController::class,'create']);
+Route::post('/signup',"App\Http\Controllers\RegisterController@store");
 
-Route::get('/api/user/{user}',"App\Http\Controllers\UserController@show");
+
+Route::get('/user/{user}',"App\Http\Controllers\UserController@show");
+Route::put('/user/{user}', "App\Http\Controllers\UserController@update");
